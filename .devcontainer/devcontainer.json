@@ -1,0 +1,41 @@
+// Update the VARIANT arg in docker-compose.yml to pick a Node.js version
+{
+	"name": "Node.js & PostgreSQL",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspace",
+	"remoteEnv": {
+		"NODE_TLS_REJECT_UNAUTHORIZED": "0"
+	},
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"ms-azuretools.vscode-docker",
+				"bajdzis.vscode-database",
+				"ms-ossdata.vscode-postgresql",
+				"cweijan.vscode-database-client2"
+			]
+		}
+	},
+
+	"forwardPorts": [9000,7001,7007],
+	"portsAttributes": {
+		"5432": {
+		  "label": "pgSQL"
+		},
+		"9000": {
+		  "label": "Medusa API"
+		},
+		"7001": {
+		  "label": "Medusa Admin"
+		}
+	},
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "npm i && npm i @medusajs/medusa-cli -g && medusa migrations run",
+	"remoteUser": "node"
+}
