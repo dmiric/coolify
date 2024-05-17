@@ -6,7 +6,7 @@
 	    "../docker-compose.dev.yml",
             "docker-compose.yml"
 	],
-	"service": "app",
+	"service": "coolify",
 	"workspaceFolder": "/workspace",
 	"remoteEnv": {
 		"NODE_TLS_REJECT_UNAUTHORIZED": "0"
