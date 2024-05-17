@@ -1,0 +1,4 @@
+services:
+  coolify:
+    volumes:
+      - ..:/workspace:cached
