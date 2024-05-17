@@ -1,9 +1,13 @@
 // Update the VARIANT arg in docker-compose.yml to pick a Node.js version
 {
 	"name": "Node.js & PostgreSQL",
-	"dockerComposeFile": "../docker-compose.dev.yml",
+	"dockerComposeFile": "",
+	"dockerComposeFile": [
+	    ".../docker-compose.dev.yml",
+            "docker-compose.yml"
+	],
 	"service": "app",
-	"workspaceFolder": "/workspaces",
+	"workspaceFolder": "/workspace",
 	"remoteEnv": {
 		"NODE_TLS_REJECT_UNAUTHORIZED": "0"
 	},
