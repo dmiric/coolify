@@ -3,7 +3,7 @@
 	"name": "Node.js & PostgreSQL",
 	"dockerComposeFile": "../docker-compose.dev.yml",
 	"service": "app",
-	"workspaceFolder": "/workspace",
+	"workspaceFolder": "/workspaces",
 	"remoteEnv": {
 		"NODE_TLS_REJECT_UNAUTHORIZED": "0"
 	},
