@@ -1,7 +1,7 @@
 // Update the VARIANT arg in docker-compose.yml to pick a Node.js version
 {
 	"name": "Node.js & PostgreSQL",
-	"dockerComposeFile": "docker-compose.yml",
+	"dockerComposeFile": "../docker-compose.dev.yml",
 	"service": "app",
 	"workspaceFolder": "/workspace",
 	"remoteEnv": {
@@ -36,6 +36,6 @@
 	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "npm i && npm i @medusajs/medusa-cli -g && medusa migrations run",
-	"remoteUser": "node"
+	"postCreateCommand": "",
+	"remoteUser": "me"
 }
