@@ -36,7 +36,7 @@ ports:
     onOpen: ignore
     name: PostgreSQL
     visibility: public
-  - port: 5173
+  - port: 5174
     onOpen: ignore
     visibility: public
     name: Node Server for Vite
