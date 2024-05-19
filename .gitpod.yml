@@ -5,6 +5,7 @@ tasks:
     init: |
       cp .env.development.example .env &&
       sed -i "s#APP_URL=http://localhost#APP_URL=$(gp url 8000)#g" .env
+      sed -i "s#VITE_URL=http://localhost#APP_URL=$(gp url 5173)#g" .env
       sed -i "s#USERID=#USERID=33333#g" .env
       sed -i "s#GROUPID=#GROUPID=33333#g" .env
       composer install --ignore-platform-reqs
