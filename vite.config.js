@@ -1,6 +1,13 @@
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import laravel from "laravel-vite-plugin";
 import vue from "@vitejs/plugin-vue";
+
+const env = loadEnv(
+    'all',
+    process.cwd()
+);
+
+console.log(env)
 
 export default defineConfig({
     server: {
@@ -8,15 +15,15 @@ export default defineConfig({
             ignored: ['**/_data/**'],
           },
         host: "0.0.0.0",
-        hmr: process.env.GITPOD_WORKSPACE_URL
+        hmr: env.VITE_URL
             ? {
                   // Due to port forwarding, we have to replace
                   // 'https' with the forwarded port, as this
                   // is the URI created by GitPod.
-                  host: process.env.GITPOD_WORKSPACE_URL.replace(
-                      "https://",
-                      "5173-"
-                  ),
+                  host: env.VITE_URL.replace(
+                    "https://",
+                    ""
+                ),
                   protocol: "wss",
                   clientPort: 443,
               }
