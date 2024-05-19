@@ -12,6 +12,7 @@ tasks:
       ./vendor/bin/spin exec -u webuser coolify php artisan key:generate
       ./vendor/bin/spin exec -u webuser coolify php artisan storage:link
       ./vendor/bin/spin exec -u webuser coolify php artisan migrate:fresh --seed
+      docker exec -it --user=root coolify chmod -R 777 /var/www/storage
       cat .coolify-logo
       gp sync-done spin-is-ready
 
